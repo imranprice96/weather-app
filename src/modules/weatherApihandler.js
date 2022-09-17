@@ -7,8 +7,8 @@ const weatherApihandler = (() => {
     return data;
   }
 
-  const buildLocationUrl = (cityName) => {
-    return `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=f2cac786360dcbdab66d346e21f80e14`;
+  const buildLocationUrl = (cityName, units) => {
+    return `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=f2cac786360dcbdab66d346e21f80e14&units=${units}`;
   };
 
   return {
