@@ -1,0 +1,42 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ddd;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+.container {
+	padding: 20px;
+	font-family: "Roboto", sans-serif;
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 20px;
+}
+
+.temp-container {
+	display: flex;
+	align-items: center;
+}
+
+.temp-details {
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5rem;
+	padding: 10px;
+	border-left: 2px solid black;
+}
+
+#temp {
+	font-size: 6rem;
+	padding-right: 10px;
+}
+
+#city {
+	font-size: 3rem;
+}
+
+#weather-desc {
+	font-size: 2rem;
+}
