@@ -5,6 +5,7 @@ body {
 	background-color: #ddd;
 	min-height: 100vh;
 	min-width: 100vw;
+	margin: 0;
 }
 
 .container {
@@ -39,4 +40,18 @@ body {
 
 #weather-desc {
 	font-size: 2rem;
+}
+
+#search {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	background-color: blue;
+	min-width: 100vw;
+}
+
+#search-form {
+	padding: 10px;
 }
