@@ -14,20 +14,26 @@ const weatherEventHandler = (() => {
 	});
 
 	async function searchCity() {
-		const searchBox = document.getElementById("search-input");
 		try {
 			const input = await weatherInputHandler.getInput();
-			console.log(input);
 			const data = await weatherApihandler.getWeatherData(input);
-			console.log(data);
 			weatherInputHandler.displayData(data);
-			searchBox.setCustomValidity("");
 		} catch (error) {
-			searchBox.setCustomValidity("Please enter a valid city");
-			searchBox.reportValidity();
-			searchBox.textContent = "";
+			const input = document.getElementById("search-input");
+			if (input.value != "") {
+				input.setCustomValidity("City not found");
+				input.reportValidity();
+				setTimeout(() => {
+					resetInput();
+					input.setCustomValidity("");
+				}, 2000);
+			}
 		}
 	}
+
+	const resetInput = () => {
+		document.getElementById("search-input").value = "";
+	};
 
 	return {};
 })();

@@ -1,10 +1,16 @@
-const weatherApihandler = (() => {
-	async function getWeatherData(cityName, units) {
-		const url = buildLocationUrl(cityName, units);
+import weatherEventHandler from "./weatherEventHandler";
 
-		const response = await fetch(url, { mode: "cors" });
-		const data = await response.json();
-		return data;
+const weatherApihandler = (() => {
+	async function getWeatherData(cityName) {
+		const url = buildLocationUrl(cityName);
+
+		let response = await fetch(url, { mode: "cors" });
+		if (response.status !== 200) {
+			throw new Error(response.status);
+		} else {
+			const data = await response.json();
+			return data;
+		}
 	}
 
 	const buildLocationUrl = (cityName = "Auckland") => {

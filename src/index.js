@@ -3,14 +3,8 @@ import weatherEventHandler from "./modules/weatherEventHandler";
 import weatherInputHandler from "./modules/weatherInputHandler";
 
 async function init() {
-	const data = await weatherApihandler.getWeatherData("London", "Metric");
-	console.log(data);
-	weatherApihandler.getWeatherData().catch((error) => {
-		console.log(error);
-	});
+	const data = await weatherApihandler.getWeatherData("Auckland", "Metric");
 	weatherInputHandler.displayData(data);
 }
 
 init();
-
-// radio button for units
