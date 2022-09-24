@@ -5,7 +5,6 @@ const weatherApihandler = (() => {
 		const url = buildLocationUrl(cityName);
 
 		let response = await fetch(url, { mode: "cors" });
-		console.log(url);
 		if (response.status !== 200) {
 			throw new Error(response.status);
 		} else {

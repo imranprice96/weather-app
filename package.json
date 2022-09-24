@@ -11,6 +11,7 @@
 		"type": "git",
 		"url": "git+https://github.com/imranprice96/weather-app.git"
 	},
+	"homepage": "/weather-app",
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
